@@ -14,18 +14,18 @@ jQuery(document).ready(function ($) {
 
   //for slider
   var wvtiles_body, wvtiles;
-  var captions = "";
+  //var captions = "";
   var create_slider = function (afterSelector, dataArray) {
     wvtiles = [];
     //debugger;
     $(dataArray).each(function (i, data) {
       img = $(data.img);
-      //caps[i]  = 'caption test '+ (i+1);
+      data1 = $(data.caption);
       if(data.caption == '' || data.caption == undefined) {
         wvtiles += '<li><img src="' + img.attr("src") + '"></li>';
       }
       else {
-        wvtiles += '<li><img src="' + img.attr("src") + '"><p class="slider_caption">' + data.caption + '</p></li>';
+        wvtiles += '<li><img src="' + img.attr("src") + '"><div class="slider_caption">' +data1[0].innerHTML+ '</div></li>';
       }
 
     });
@@ -42,15 +42,14 @@ jQuery(document).ready(function ($) {
   });*/
 
   $('.master-slider-parent').each(function (index, value) {
-    debugger;
+    //debugger;
     var data=[];
     $(this).find('.ms-slide').each(function (ind) {
-      console.log("img", $(this).find('img'));
-      console.log("info", $(this).find('.ms-info')[0]);
+      //console.log("img", $(this).find('img'));
+      //console.log("info", $(this).find('.ms-info')[0]);
       data[ind] = {};
       data[ind].img = $(this).find('img')[0];
       data[ind].caption = $(this).find('.ms-info')[0];
-      
     });
     create_slider(this, data);
 
