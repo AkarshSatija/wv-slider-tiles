@@ -14,18 +14,18 @@ jQuery(document).ready(function ($) {
 
   //for slider
   var wvtiles_body, wvtiles;
-  var captions = ;
-  var create_slider = function (afterSelector, imgs, caps) {
+  var captions = "";
+  var create_slider = function (afterSelector, dataArray) {
     wvtiles = [];
     //debugger;
-    imgs.each(function (i, img2) {
-      img = $(img2);
+    $(dataArray).each(function (i, data) {
+      img = $(data.img);
       //caps[i]  = 'caption test '+ (i+1);
-      if(caps[i] == '' || caps[i] == undefined) {
+      if(data.caption == '' || data.caption == undefined) {
         wvtiles += '<li><img src="' + img.attr("src") + '"></li>';
-      } 
+      }
       else {
-        wvtiles += '<li><img src="' + img.attr("src") + '"><p class="slider_caption">' + caps[i] + '</p></li>';
+        wvtiles += '<li><img src="' + img.attr("src") + '"><p class="slider_caption">' + data.caption + '</p></li>';
       }
 
     });
@@ -35,17 +35,39 @@ jQuery(document).ready(function ($) {
     $(wvtiles_body).insertAfter(afterSelector);
   };
 
-  $('.tiled-gallery').each(function (index, value) {
+  /*$('.tiled-gallery').each(function (index, value) {
     //debugger;
     imgs = $(this).find('.tiled-gallery-item a > img');
     create_slider(this, imgs, ['caption 1st here', '', 'caption 3rd here', 'caption 4th here', 'caption 5th here', 'caption 6th here'])
-  });
+  });*/
 
   $('.master-slider-parent').each(function (index, value) {
-    //debugger;
-    imgs = $(this).find('.ms-slide > img');
-    create_slider(this, imgs, ['caption arr 2 1st here', '', 'caption arr 2 3rd here', 'caption arr 2 4th here', 'caption arr 2 5th here', 'caption arr 2 6th here'])
+    debugger;
+    var data=[];
+    $(this).find('.ms-slide').each(function (ind) {
+      console.log("img", $(this).find('img'));
+      console.log("info", $(this).find('.ms-info')[0]);
+      data[ind] = {};
+      data[ind].img = $(this).find('img')[0];
+      data[ind].caption = $(this).find('.ms-info')[0];
+      
+    });
+    create_slider(this, data);
+
+    /*imgs = $(this).find('.ms-slide > img');
+    create_slider(this, imgs, ['caption arr 2 1st here', '', 'caption arr 2 3rd here', 'caption arr 2 4th here', 'caption arr 2 5th here', 'caption arr 2 6th here'])*/
   });
+
+/*
+  $(this).find('.ms-slide').each(function (index) {
+    console.log("img", $(this).find('img'));
+    console.log("info", $(this).find('.ms-info')[0]);
+    data[index] = {};
+    data[index].img = $(this).find('img')[0];
+    data[index].caption = $(this).find('.ms-info')[0];
+  })*/
+
+
 
   $(window).load(function () {
     $('.the-slider .slider ul').show();
