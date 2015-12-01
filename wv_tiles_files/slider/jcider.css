@@ -1,0 +1,106 @@
+.jcider-nav {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    width: 100%;
+    color: white;
+    font-size: 30px
+}
+.jcider-nav span {
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    font-size: 50px;
+    color: white;
+    transition: all 300ms;
+    line-height: 1
+}
+.jcider-nav span.disabled {
+    pointer-events: none;
+    color: rgba(255, 255, 255, 0.2)
+}
+.jcider-nav .jcider-nav-left {
+    left: 5px
+}
+.jcider-nav .jcider-nav-right {
+    right: 5px
+}
+.jcider-nav-left:before {
+    content: "\003c"
+}
+.jcider-nav-right:before {
+    content: "\003e"
+}
+.jcider-nav span {
+    font-size: 36px !important
+}
+.jcider-pagination {
+    display: none !important
+}
+.master-slider-parent,.tiled-gallery {
+    display: none !important
+}
+.container {
+    max-width: 100%;
+    margin: 0px auto
+}
+.container .slider{
+    color: #fff;
+    margin: 0 auto;
+    text-align: center
+}
+.container .slider,
+.container li {
+    width: 100%;
+    height: auto
+}
+.container li,
+.container ul {
+    padding: 0;
+    margin: 0
+}
+.container li {
+    list-style: none
+}
+.container li img {
+    position: relative
+}
+.container li h3 {
+    top: 40%;
+    text-align: center
+}
+.lbb_swipe {
+    cursor: pointer;
+    position: absolute;
+    color: #FFF;
+    line-height: 1;
+    transition: all 300ms ease 0s;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%
+}
+.the-slider .slider ul{
+    display: none
+}
+.loader {
+    width: 200px;
+    height: 200px
+}
+.slider_caption{
+    width: 100%;
+    /*left: 0px;
+    bottom: 4px;*/
+    margin: 0px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 5px 0px;
+    font-size: 16px !important;
+    position: relative;
+    top:-4px;
+}
