@@ -22,10 +22,10 @@ jQuery(document).ready(function ($) {
       img = $(data.img);
       data1 = $(data.caption);
       if(data.caption == '' || data.caption == undefined) {
-        wvtiles += '<li><div class="slider_box"><img src="' + img.attr("src") + '"></div></li>';
+        wvtiles += '<li><div class="slider_box"><div class="pos-rel"><img src="' + img.attr("src") + '"><div class=" jcider-nav"><span class="jcider-nav-left">&#10094</span><span class="jcider-nav-right">&#10095</span></div></div></div></li>';
       }
       else {
-        wvtiles += '<li><div class="slider_box"><img src="' + img.attr("src") + '"><div class="slider_caption">' +data1[0].innerHTML+ '</div></div></li>';
+        wvtiles += '<li><div class="slider_box"><div class="pos-rel"><img src="' + img.attr("src") + '"><div class=" jcider-nav"><span class="jcider-nav-left">&#10094</span><span class="jcider-nav-right">&#10095</span></div></div><div class="slider_caption">' +data1[0].innerHTML+ '</div></div></li>';
       }
 
     });
