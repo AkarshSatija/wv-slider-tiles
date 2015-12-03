@@ -15,14 +15,14 @@
     text-align: center;
     cursor: pointer;
     position: absolute;
-    font-size: 32px;
+    font-size: 30px;
     color: #000;
     transition: all 300ms;
     line-height: 36px;
     border-radius: 50%;
     width: 36px;
     height: 36px;
-    padding: 1px;
+    padding: 2px;
     background-color: rgba(245, 245, 245, 0.25);
 }
 .jcider-nav span.disabled {
